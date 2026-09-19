@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Your FCMB Card Is Ready</title>
+
+<style>
+  /* ============================================
+     RESET
+  ============================================ */
+  body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+  img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+  body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; background-color: #eef1f5; font-family: 'Segoe UI', Arial, Helvetica, sans-serif; }
+
+  /* ============================================
+     BRAND COLORS (adjust to FCMB brand guide)
+     Navy: #002856  |  Gold/Orange accent: #f7941d
+  ============================================ */
+
+  .preheader { display: none !important; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0; overflow: hidden; }
+
+  .email-wrapper { width: 100%; background-color: #eef1f5; padding: 24px 0; }
+  .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,40,86,0.08); }
+
+  /* HEADER */
+  .header { background-color: #002856; padding: 24px 32px; text-align: center; }
+  .logo-badge {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #002856;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  /* Replace .logo-badge above with a real <img src="YOUR_HOSTED_FCMB_LOGO_URL" width="140" alt="FCMB" /> */
+
+  /* HERO TEXT */
+  .hero { padding: 32px 32px 8px 32px; text-align: center; }
+  .hero h1 { margin: 0 0 8px 0; color: #002856; font-size: 24px; line-height: 1.3; }
+  .hero p { margin: 0; color: #5a6472; font-size: 15px; line-height: 1.5; }
+
+  /* ============================================
+     ANIMATED ROTATING CARD
+     Note: 3D/keyframe animation renders in Apple Mail,
+     iOS Mail, and most webmail (Gmail/Yahoo web view).
+     Outlook desktop + some Gmail apps ignore <style>
+     animations and will simply show the static card —
+     which is why we set a clean flat look as the base
+     state (no broken mid-rotation frame ever shows).
+  ============================================ */
+  .card-stage {
+    padding: 28px 0 8px 0;
+    text-align: center;
+    perspective: 1000px;
+  }
+
+  .card {
+    display: inline-block;
+    width: 320px;
+    height: 200px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #002856 0%, #004080 45%, #00305e 100%);
+    box-shadow: 0 12px 30px rgba(0,40,86,0.35);
+    position: relative;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    transform-style: preserve-3d;
+    animation: cardRotate 7s ease-in-out infinite;
+  }
+
+  @keyframes cardRotate {
+    0%   { transform: rotateY(0deg); }
+    45%  { transform: rotateY(360deg); }
+    55%  { transform: rotateY(360deg); }
+    100% { transform: rotateY(720deg); }
+  }
+
+  .card-inner { padding: 22px 24px; height: calc(100% - 44px); position: relative; }
+
+  .card-logo-row { display: flex; justify-content: space-between; align-items: flex-start; }
+  .card-brand { font-size: 15px; font-weight: 700; letter-spacing: 1px; color: #ffffff; }
+  .card-brand span { color: #f7941d; }
+
+  .chip {
+    width: 40px; height: 30px;
+    background: linear-gradient(135deg, #f7d774, #e3b13a);
+    border-radius: 6px;
+    margin-top: 18px;
+  }
+
+  .card-number {
+    margin-top: 22px;
+    font-size: 19px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #f5f7fa;
+  }
+
+  .card-bottom-row {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .card-label { font-size: 9px; text-transform: uppercase; color: #b9c6d8; letter-spacing: 1px; margin-bottom: 2px; }
+  .card-value { font-size: 13px; font-weight: 600; color: #ffffff; }
+
+  .network-mark {
+    font-size: 16px;
+    font-weight: 800;
+    font-style: italic;
+    color: #f7941d;
+  }
+
+  /* CTA */
+  .cta-wrap { text-align: center; padding: 28px 32px 8px 32px; }
+  .cta-button {
+    display: inline-block;
+    background-color: #f7941d;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 38px;
+    border-radius: 30px;
+    box-shadow: 0 6px 16px rgba(247,148,29,0.35);
+  }
+  .cta-sub { margin-top: 10px; font-size: 12px; color: #8a94a3; }
+
+  /* BENEFITS / VALUE SECTION */
+  .section-title {
+    padding: 32px 32px 4px 32px;
+    color: #002856;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .benefits-table { width: 100%; border-collapse: collapse; padding: 0 32px; }
+  .benefit-row td { padding: 14px 32px; border-bottom: 1px solid #eef1f5; vertical-align: top; }
+  .benefit-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background-color: #fff3e6; color: #f7941d;
+    text-align: center; line-height: 36px; font-weight: 800; font-size: 15px;
+  }
+  .benefit-text-title { font-size: 14px; font-weight: 700; color: #002856; margin: 0 0 2px 0; }
+  .benefit-text-desc { font-size: 13px; color: #5a6472; margin: 0; line-height: 1.4; }
+
+  /* SPEND LIMIT TABLE */
+  .limit-box {
+    margin: 24px 32px 8px 32px;
+    background-color: #f6f8fb;
+    border-radius: 10px;
+    border: 1px solid #e3e8ef;
+    overflow: hidden;
+  }
+  .limit-box-header {
+    background-color: #002856;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 20px;
+  }
+  .limit-table { width: 100%; border-collapse: collapse; }
+  .limit-table td { padding: 12px 20px; font-size: 13px; color: #33404f; border-bottom: 1px solid #e3e8ef; }
+  .limit-table tr:last-child td { border-bottom: none; }
+  .limit-table td.limit-name { font-weight: 600; color: #002856; }
+  .limit-table td.limit-value { text-align: right; font-weight: 700; color: #f7941d; }
+
+  /* SECURITY NOTE */
+  .notice {
+    margin: 24px 32px 8px 32px;
+    background-color: #fff8ec;
+    border-left: 4px solid #f7941d;
+    padding: 14px 18px;
+    font-size: 12.5px;
+    color: #5a6472;
+    line-height: 1.5;
+    border-radius: 4px;
+  }
+
+  /* FOOTER */
+  .footer { padding: 28px 32px 32px 32px; text-align: center; }
+  .footer p { margin: 0 0 6px 0; font-size: 12px; color: #8a94a3; line-height: 1.6; }
+  .footer a { color: #242324; text-decoration: none; }
+  .social-row { padding: 8px 0 16px 0; }
+  .social-row a { display: inline-block; margin: 0 6px; width: 30px; height: 30px; border-radius: 50%; background-color: #002856; color: #ffffff; line-height: 30px; text-align: center; font-size: 13px; text-decoration: none; }
+
+  @media only screen and (max-width: 480px) {
+    .card { width: 90%; max-width: 300px; }
+    .hero, .cta-wrap, .section-title, .benefit-row td, .limit-box, .notice, .footer { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Preheader (inbox preview text) -->
+  <div class="preheader">Your new FCMB card has been activated — here's everything it unlocks for you.</div>
+
+  <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center">
+        <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0">
+
+          <!-- HEADER / LOGO -->
+          <tr>
+            <td class="header">
+              <!-- Replace this badge with your hosted FCMB logo image, e.g.: -->
+              <!-- <img src="https://your-cdn.fcmb.com/assets/fcmb-logo-white.png" width="140" alt="FCMB" /> -->
+              <span class="logo-badge">FCMB</span>
+            </td>
+          </tr>
+
+          <!-- HERO -->
+          <tr>
+            <td class="hero">
+              <h1>Your Card Is Active! 🎉</h1>
+              <p>Hi Afe Tosin, great news — your new FCMB card has been successfully activated and is ready to use.</p>
+            </td>
+          </tr>
+
+          <!-- ANIMATED CARD -->
+          <tr>
+            <td class="card-stage">
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-logo-row">
+                    <div class="card-brand">FCMB <span>|</span> PLATINUM</div>
+                    <div class="network-mark">Naira Mastercard</div>
+                  </div>
+                  <div class="chip"></div>
+                  <div class="card-number">•••• •••• •••• 4821</div>
+                  <div class="card-bottom-row">
+                    <div>
+                      <div class="card-label">Card Holder</div>
+                      <div class="card-value">Afe Tosin Shola</div>
+                    </div>
+                    <div>
+                      <div class="card-label">Expires</div>
+                      <div class="card-value">08/29</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- CTA -->
+          <tr>
+            <td class="cta-wrap">
+              <a href="https://online.fcmb.com/activate" class="cta-button" target="_blank">Manage My Card</a>
+              <p class="cta-sub">Set your PIN, view statements, and manage limits anytime in FCMB Mobile/Internet Banking.</p>
+            </td>
+          </tr>
+
+          <!-- BENEFITS -->
+          <tr>
+            <td class="section-title">What your card gives you</td>
+          </tr>
+          <tr>
+            <td>
+              <table role="presentation" class="benefits-table" width="100%" cellpadding="0" cellspacing="0">
+                <tr class="benefit-row">
+                  <td width="50">
+                    <div class="benefit-icon">✓</div>
+                  </td>
+                  <td>
+                    <p class="benefit-text-title">Contactless & Chip-and-PIN payments</p>
+                    <p class="benefit-text-desc">Tap to pay in-store or use your PIN — accepted at millions of merchants worldwide.</p>
+                  </td>
+                </tr>
+                <tr class="benefit-row">
+                  <td width="50">
+                    <div class="benefit-icon">✓</div>
+                  </td>
+                  <td>
+                    <p class="benefit-text-title">Free ATM withdrawals on FCMB ATMs</p>
+                    <p class="benefit-text-desc">No charges when you withdraw from any FCMB ATM nationwide.</p>
+                  </td>
+                </tr>
+                <tr class="benefit-row">
+                  <td width="50">
+                    <div class="benefit-icon">✓</div>
+                  </td>
+                  <td>
+                    <p class="benefit-text-title">Secure online & international transactions</p>
+                    <p class="benefit-text-desc">Shop online and abroad with 3D Secure verification for every transaction.</p>
+                  </td>
+                </tr>
+                <tr class="benefit-row">
+                  <td width="50">
+                    <div class="benefit-icon">✓</div>
+                  </td>
+                  <td>
+                    <p class="benefit-text-title">Real-time transaction alerts</p>
+                    <p class="benefit-text-desc">Get instant SMS and email notifications for every transaction on your card.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- SPEND LIMITS -->
+          <tr>
+            <td>
+              <div class="limit-box">
+                <div class="limit-box-header">Your Card Spend Limits</div>
+                <table role="presentation" class="limit-table" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="limit-name">Daily ATM Withdrawal</td>
+                    <td class="limit-value">₦150,000</td>
+                  </tr>
+                  <tr>
+                    <td class="limit-name">Daily POS / In-Store Spend</td>
+                    <td class="limit-value">₦1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td class="limit-name">Daily Online Transaction Limit</td>
+                    <td class="limit-value">₦500,000</td>
+                  </tr>
+                  <tr>
+                    <td class="limit-name">International Transaction Limit</td>
+                    <td class="limit-value">$1,000 / month</td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+
+          <!-- SECURITY NOTICE -->
+          <tr>
+            <td>
+              <div class="notice">
+                <strong>Keep your card safe:</strong> FCMB will never ask for your PIN, OTP, or full card number by phone, email, or SMS. Never share these details with anyone.
+              </div>
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td class="footer">
+              <div class="social-row">
+                <a href="#">f</a>
+                <a href="#">in</a>
+                <a href="#">x</a>
+                <a href="#">ig</a>
+              </div>
+              <p>First City Monument Bank Limited, Primrose Tower, 17A Tinubu Street, Lagos Island, Lagos, Nigeria.</p>
+              <p>Need help? Call [0700-CALL-FCMB] or email <a href="mailto:customercare@fcmb.com">customercare@fcmb.com</a></p>
+              <p>You are receiving this email because a card was recently issued/activated on your FCMB account.</p>
+              <p><a href="#">Unsubscribe from card notifications</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
